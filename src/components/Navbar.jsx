@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, Button } from "@heroui/react";
 import Image from "next/image";
 import logo from "../assets/logo.png"
+import BanglaDate from "./BanglaDate";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,8 +46,10 @@ export default function Navbar() {
                   <div className="flex items-center gap-3">
                       {/* Need to add logo */}
                       <Image height={40} width={40} alt="Logo" src={logo} className="bg-[#05893E] p-2 rounded-xl" />
-                      <Link href="/" className="font-bold">বাজার দর</Link>
-
+                      <div>
+                        <Link href="/" className="font-bold text-xl">বাজার দর</Link>
+                      <BanglaDate />
+                      </div>
                       {/* Need to add Date */}
 
                   </div>
@@ -65,8 +68,8 @@ export default function Navbar() {
                   </li>
               </ul>
               <div className="hidden items-center gap-4 md:flex">
-                  <Link href="/sign-in">Login</Link>
-                  <Link href="/sign-up"><Button>Sign Up</Button></Link>
+                  <Link href="/sign-in">সাইন ইন</Link>
+                  <Link href="/sign-up"><Button>সাইন আপ</Button></Link>
               </div>
           </header>
           {isMenuOpen && (
