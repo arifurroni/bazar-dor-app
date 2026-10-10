@@ -91,10 +91,10 @@ export default function Navbar() {
                           </Link>
                       </li>
                       <li className="mt-4 flex flex-col gap-2 border-t border-separator pt-4">
-                          <Link href="#" className="block py-2">
-                              Login
+                          <Link href="/sign-in" className="block py-2">
+                              সাইন ইন
                           </Link>
-                          <Button className="w-full">Sign Up</Button>
+                          <Link href="/sign-up"><Button className="w-full">সাইন আপ</Button></Link>
                       </li>
                   </ul>
               </div>
