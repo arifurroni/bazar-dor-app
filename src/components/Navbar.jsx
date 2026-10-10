@@ -1,14 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Button } from "@heroui/react";
 import Image from "next/image";
 import logo from "../assets/logo.png"
 import BanglaDate from "./BanglaDate";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+// import baseUrl from "@/services/baseUrl";
 
-export default function Navbar() {
+export default function Navbar({categories}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+//   const [categories, setCategories] = useState([]);
 
   const router = useRouter();
 
@@ -24,7 +27,14 @@ export default function Navbar() {
   },
 });
     }
-  
+
+    // useEffect(() => {
+    //     fetch(`${baseUrl}/api/bazardor/categories`)
+    //     .then(res=> res.json())
+    //     .then(data=> setCategories(data))
+    //     .catch(err=> console.log(err))
+    // }, []);
+    console.log(categories);
 
   return (
       <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
@@ -72,31 +82,49 @@ export default function Navbar() {
                   </div>
               </div>
               <ul className="hidden items-center gap-4 md:flex">
-                  <li>
+                  {/* <li>
                       <Link href="#">Features</Link>
                   </li>
                   <li>
                       <Link href="#" className="font-medium text-accent" aria-current="page">
                           Dashboard
                       </Link>
-                  </li>
-                  {
+                  </li> */}
+
+                    {
+                        categories?.map(cat => <li key={cat?.id}><span>{cat?.icon}</span><Link className="text-xs">{cat?.nameBn}</Link></li>)
+                    }
+
+                  {/* {
                     session?.user && <li>
                       <Link href="/profile">Profile</Link>
                   </li>
-                  }
+                  } */}
               </ul>
               <div className="hidden items-center gap-4 md:flex">
+                {
+                    session?.user && <>
+                      <Link href="/profile" className="border-2 border-[#05893E] px-2">Profile</Link>
+                  </>
+                  }
+
                   {
                     session?.user ? <><button onClick={handleSignOut} className="bg-[#05893E] text-white rounded-xl px-2 py-1">Sign Out</button></> : <><Link href="/sign-in">সাইন ইন</Link>
                   <Link href="/sign-up"><Button className="bg-[#05893E]">সাইন আপ</Button></Link></>
                   }
+                   
+
               </div>
+              {/* <div>
+                {
+                        categories.map(cat => <div key={cat.id} className="flex"><li><Link>{cat.nameBn}</Link></li></div>)
+                    }
+              </div> */}
           </header>
           {isMenuOpen && (
               <div className="border-t border-separator md:hidden">
                   <ul className="flex flex-col gap-2 p-4">
-                      <li>
+                      {/* <li>
                           <Link href="#" className="block py-2">
                               Features
                           </Link>
@@ -105,10 +133,10 @@ export default function Navbar() {
                           <Link href="#" className="block py-2 font-medium text-accent">
                               Dashboard
                           </Link>
-                      </li>
+                      </li> */}
                       {
                         session?.user && <li>
-                          <Link href="/profile" className="block py-2">
+                          <Link href="/profile" className="block py-2 border-2 border-[#05893E] px-2">
                               Profile
                           </Link>
                       </li>
@@ -124,6 +152,7 @@ export default function Navbar() {
                   </ul>
               </div>
           )}
+
       </nav>
   );
 }
