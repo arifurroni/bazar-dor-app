@@ -20,13 +20,13 @@
 
 | Technology                                    | Purpose                                           |
 | --------------------------------------------- | ------------------------------------------------- |
-| [Next.js](https://nextjs.org/)                | React framework for building the web application  |
-| [React](https://react.dev/)                   | Building reusable UI components                   |
-| [TypeScript](https://www.typescriptlang.org/) | Type safety and maintainable code                 |
-| [Tailwind CSS](https://tailwindcss.com/)      | Utility-first styling and responsive layouts      |
-| [DaisyUI](https://daisyui.com/)               | Prebuilt UI components and design utilities       |
-| [Sonner](https://sonner.emilkowal.ski/)       | Toast notifications and user feedback             |
-| [Better Auth]   | Authentication and session management             |
+| Next.js                | React framework for building the web application  |
+| React                  | Building reusable UI components                   |
+| JavaScript | maintainable code                 |
+| Tailwind CSS      | Utility-first styling and responsive layouts      |
+| DaisyUI              | Prebuilt UI components and design utilities       |
+| React-Toastify       | Toast notifications and user feedback             |
+| Better Auth   | Authentication and session management             |
 | REST API                                      | Fetching product, category, and market price data |
 
 ---
