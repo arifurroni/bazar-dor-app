@@ -94,7 +94,7 @@ export default function Navbar() {
                           <Link href="/sign-in" className="block py-2">
                               সাইন ইন
                           </Link>
-                          <Link href="/sign-up"><Button className="w-full">সাইন আপ</Button></Link>
+                          <Link href="/sign-up"><Button className="w-full bg-[#05893E]">সাইন আপ</Button></Link>
                       </li>
                   </ul>
               </div>
