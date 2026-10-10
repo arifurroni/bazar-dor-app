@@ -92,8 +92,8 @@ const SignUp = () => {
                         </TextField>
                     </FieldGroup>
                     <Fieldset.Actions>
-                        <Button type="submit">
-                            Save changes
+                        <Button type="submit" className="bg-[#05893E]">
+                            Sign Up
                         </Button>
                         <Button type="reset" variant="secondary">
                             Cancel

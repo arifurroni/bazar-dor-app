@@ -13,8 +13,8 @@ const NotFoundPage = () => {
             <div className="relative z-10 mx-auto max-w-2xl text-center">
 
                 {/* Icon */}
-                <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-3xl bg-linear-to-br from-green-400 to-green-600 text-4xl shadow-xl shadow-green-500/20">
-                    🏋️
+                <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-3xl bg-linear-to-br from-green-400 to-green-600 text-6xl shadow-xl shadow-green-500/20">
+                    🛒
                 </div>
 
                 {/* 404 */}
@@ -43,10 +43,6 @@ const NotFoundPage = () => {
 
                 </div>
 
-                {/* Footer
-                <p className="mt-12 text-sm text-gray-200">
-                    © {new Date().getFullYear()} Fit Log · Stay consistent. Stay fit.
-                </p> */}
             </div>
         </main>
     );

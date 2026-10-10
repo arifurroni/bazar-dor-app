@@ -70,8 +70,8 @@ const SignIn = () => {
                 </TextField>
 
                 <div className="flex gap-2">
-                    <Button type="submit">
-                        Submit
+                    <Button type="submit" className="bg-[#05893E]">
+                        Sign In
                     </Button>
                     <Button type="reset" variant="secondary">
                         Reset
