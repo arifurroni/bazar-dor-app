@@ -4,9 +4,26 @@ import { Link, Button } from "@heroui/react";
 import Image from "next/image";
 import logo from "../assets/logo.png"
 import BanglaDate from "./BanglaDate";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const router = useRouter();
+
+  const { data: session } = authClient.useSession()
+//   console.log(session);
+
+    const handleSignOut = async () => {
+        await authClient.signOut({
+  fetchOptions: {
+    onSuccess: () => {
+      router.push("/sign-in"); // redirect to Sign In page
+    },
+  },
+});
+    }
   
 
   return (
@@ -63,13 +80,17 @@ export default function Navbar() {
                           Dashboard
                       </Link>
                   </li>
-                  <li>
-                      <Link href="#">Profile</Link>
+                  {
+                    session?.user && <li>
+                      <Link href="/profile">Profile</Link>
                   </li>
+                  }
               </ul>
               <div className="hidden items-center gap-4 md:flex">
-                  <Link href="/sign-in">সাইন ইন</Link>
-                  <Link href="/sign-up"><Button className="bg-[#05893E]">সাইন আপ</Button></Link>
+                  {
+                    session?.user ? <><button onClick={handleSignOut} className="bg-[#05893E] text-white rounded-xl px-2 py-1">Sign Out</button></> : <><Link href="/sign-in">সাইন ইন</Link>
+                  <Link href="/sign-up"><Button className="bg-[#05893E]">সাইন আপ</Button></Link></>
+                  }
               </div>
           </header>
           {isMenuOpen && (
@@ -85,16 +106,20 @@ export default function Navbar() {
                               Dashboard
                           </Link>
                       </li>
-                      <li>
-                          <Link href="#" className="block py-2">
+                      {
+                        session?.user && <li>
+                          <Link href="/profile" className="block py-2">
                               Profile
                           </Link>
                       </li>
+                      }
                       <li className="mt-4 flex flex-col gap-2 border-t border-separator pt-4">
-                          <Link href="/sign-in" className="block py-2">
+                          {
+                            session?.user ? <><button onClick={handleSignOut} className="bg-[#05893E] text-white rounded-2xl p-1">Sign Out</button></> : <><Link href="/sign-in" className="block py-2">
                               সাইন ইন
                           </Link>
-                          <Link href="/sign-up"><Button className="w-full bg-[#05893E]">সাইন আপ</Button></Link>
+                          <Link href="/sign-up"><Button className="w-full bg-[#05893E]">সাইন আপ</Button></Link></>
+                          }
                       </li>
                   </ul>
               </div>
