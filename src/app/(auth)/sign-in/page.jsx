@@ -23,6 +23,12 @@ const SignIn = () => {
 
         alert(`Form submitted with: ${JSON.stringify(data, null, 2)}`);
     };
+
+    const login = async () => {
+        const data = await signIn.social({
+            provider: "google",
+        });
+    };
   
     return (
         <div className='flex justify-center mt-5'>
@@ -77,7 +83,9 @@ const SignIn = () => {
                         Reset
                     </Button>
                 </div>
+                <Button onClick={login} className="border-2 border-[#05893E] text-black bg-white">Google Sign In</Button>
             </Form>
+
         </div>
     );
 };
