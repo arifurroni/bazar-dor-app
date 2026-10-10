@@ -12,18 +12,27 @@ import {
   TextArea,
   TextField,
 } from "@heroui/react";
+import { signUp } from '@/lib/auth-client';
+
 
 const SignUp = () => {
 
-    const onSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = {};
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const data = {};
 
-    // Convert FormData to plain object
-    formData.forEach((value, key) => {
-      data[key] = value.toString();
-    });
+        // Convert FormData to plain object
+        formData.forEach((value, key) => {
+            data[key] = value.toString();
+        });
+
+        const { data:signUpData, error } = await signUp.email({
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            callbackURL: "/",
+        });
 
     console.log(data);
 
