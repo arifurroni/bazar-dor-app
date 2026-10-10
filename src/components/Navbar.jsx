@@ -87,7 +87,7 @@ export default function Navbar() {
                       </li>
                       <li>
                           <Link href="#" className="block py-2">
-                              Pricing
+                              Profile
                           </Link>
                       </li>
                       <li className="mt-4 flex flex-col gap-2 border-t border-separator pt-4">
