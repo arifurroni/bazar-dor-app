@@ -26,7 +26,7 @@
 | [Tailwind CSS](https://tailwindcss.com/)      | Utility-first styling and responsive layouts      |
 | [DaisyUI](https://daisyui.com/)               | Prebuilt UI components and design utilities       |
 | [Sonner](https://sonner.emilkowal.ski/)       | Toast notifications and user feedback             |
-| [Better Auth](https://www.better-auth.com/)   | Authentication and session management             |
+| [Better Auth]   | Authentication and session management             |
 | REST API                                      | Fetching product, category, and market price data |
 
 ---
