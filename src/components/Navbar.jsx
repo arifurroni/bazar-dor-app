@@ -69,7 +69,7 @@ export default function Navbar() {
               </ul>
               <div className="hidden items-center gap-4 md:flex">
                   <Link href="/sign-in">সাইন ইন</Link>
-                  <Link href="/sign-up"><Button>সাইন আপ</Button></Link>
+                  <Link href="/sign-up"><Button className="bg-[#05893E]">সাইন আপ</Button></Link>
               </div>
           </header>
           {isMenuOpen && (
