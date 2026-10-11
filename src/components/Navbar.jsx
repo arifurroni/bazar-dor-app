@@ -125,6 +125,9 @@ export default function Navbar({categories}) {
           </header>
           {isMenuOpen && (
               <div className="border-t border-separator md:hidden">
+                    {
+                        categories?.map(cat => <li key={cat?.id}><Link href={`/category/${cat?.slug}`} className="text-xs"><span>{cat?.icon}</span>{cat?.nameBn}</Link></li>)
+                    }
                   <ul className="flex flex-col gap-2 p-4">
                       <Link href="/" className="border-2 border-[#05893E] text-xs px-2 py-2">হোম</Link>
                       {/* <li>
