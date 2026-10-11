@@ -1,4 +1,5 @@
 import BannerPage from "@/components/Banner";
+import Marquee from "@/components/Marquee";
 import ProductCard from "@/components/ProductCard";
 import baseUrl from "@/services/baseUrl";
 import Image from "next/image";
@@ -21,6 +22,7 @@ export default async function Home() {
 
   return (
     <div>
+      <Marquee products={products}></Marquee>
       <BannerPage />
 
       <div className="mx[5%] md:mx-[10%] my-10">
