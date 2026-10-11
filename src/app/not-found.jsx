@@ -28,7 +28,7 @@ const NotFoundPage = () => {
                 </h2>
 
                 <p className="mx-auto mt-4 max-w-lg text-base leading-7 text-gray-200 sm:text-lg">
-                    Looks like this workout took a wrong turn. The page you&apos;re
+                    The page you&apos;re
                     looking for doesn&apos;t exist or may have been moved.
                 </p>
 

@@ -46,7 +46,7 @@ export default async function Home() {
       </div>
 
       <div className="mx[5%] md:mx-[10%] my-10">
-        <h2 className="font-bold px-2 text-xl">সব পণ্য</h2>
+        <h2 id="allproduct" className="font-bold px-2 text-xl">সব পণ্য</h2>
         <div className="my-2 px-2 text-sm">{`Showing total: ${products.length} products`}</div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 my-5">
           {

@@ -13,6 +13,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { signUp } from '@/lib/auth-client';
+import { toast } from 'react-toastify';
 
 
 const SignUp = () => {
@@ -34,9 +35,9 @@ const SignUp = () => {
             callbackURL: "/",
         });
 
-    console.log(data);
+    // console.log(data);
 
-    alert("Form submitted successfully!");
+    toast("Form submitted successfully!");
   };
 
     return (

@@ -2,6 +2,7 @@
 import React from 'react';
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import { signIn } from '@/lib/auth-client';
+import { toast } from 'react-toastify';
 
 const SignIn = () => {
 
@@ -21,13 +22,14 @@ const SignIn = () => {
             callbackURL: "/", // An optional URL to redirect to after the user signs in. (optional)
         });
 
-        alert(`Form submitted with: ${JSON.stringify(data, null, 2)}`);
+        toast(`Successfully Sign In with Email`);
     };
 
     const login = async () => {
         const data = await signIn.social({
             provider: "google",
         });
+        toast("Successfully Sign In with Google")
     };
   
     return (
