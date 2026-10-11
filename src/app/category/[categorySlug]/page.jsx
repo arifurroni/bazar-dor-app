@@ -56,7 +56,7 @@ const currentCategory = categories.find(c => c.slug == categorySlug);
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
             {
-                categoryProducts.map(product => <ProductCard key={product.id} product={product}></ProductCard>)
+                categoryProducts.map((product) => <ProductCard key={product.id} product={product}></ProductCard>)
             }
           </div>
           

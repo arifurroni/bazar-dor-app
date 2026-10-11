@@ -83,7 +83,7 @@ export default function Navbar({categories}) {
                   
               </div>
               <ul className="hidden items-center gap-4 md:flex">
-                  <Link href="/" className="border-2 border-[#05893E] text-xs px-2 py-2">Home</Link>
+                  <Link href="/" className="border-2 border-[#05893E] text-xs px-2 py-2">হোম</Link>
                   {/* <li>
                       <Link href="#">Features</Link>
                   </li>
@@ -106,12 +106,12 @@ export default function Navbar({categories}) {
               <div className="hidden items-center gap-4 md:flex">
                 {
                     session?.user && <>
-                      <Link href="/profile" className="border-2 border-[#05893E] px-2 py-2 text-xs">Profile</Link>
+                      <Link href="/profile" className="border-2 border-[#05893E] px-2 py-2 text-xs">প্রোফাইল</Link>
                   </>
                   }
 
                   {
-                    session?.user ? <><button onClick={handleSignOut} className="bg-[#05893E] text-white rounded-xl px-2 py-2 text-sm">Sign Out</button></> : <><Link href="/sign-in">সাইন ইন</Link>
+                    session?.user ? <><button onClick={handleSignOut} className="bg-[#05893E] text-white rounded-xl px-2 py-2 text-sm">সাইন আউট</button></> : <><Link href="/sign-in">সাইন ইন</Link>
                   <Link href="/sign-up"><Button className="bg-[#05893E]">সাইন আপ</Button></Link></>
                   }
                    
@@ -126,7 +126,7 @@ export default function Navbar({categories}) {
           {isMenuOpen && (
               <div className="border-t border-separator md:hidden">
                   <ul className="flex flex-col gap-2 p-4">
-                      <Link href="/" className="border-2 border-[#05893E] text-xs px-2 py-2">Home</Link>
+                      <Link href="/" className="border-2 border-[#05893E] text-xs px-2 py-2">হোম</Link>
                       {/* <li>
                           <Link href="#" className="block py-2">
                               Features
@@ -140,13 +140,13 @@ export default function Navbar({categories}) {
                       {
                         session?.user && <li>
                           <Link href="/profile" className="block py-2 border-2 border-[#05893E] px-2 text-xs">
-                              Profile
+                              প্রোফাইল
                           </Link>
                       </li>
                       }
                       <li className="mt-4 flex flex-col gap-2 border-t border-separator pt-4">
                           {
-                            session?.user ? <><button onClick={handleSignOut} className="bg-[#05893E] text-white rounded-2xl p-1">Sign Out</button></> : <><Link href="/sign-in" className="block py-2">
+                            session?.user ? <><button onClick={handleSignOut} className="bg-[#05893E] text-white rounded-2xl p-1">সাইন আউট</button></> : <><Link href="/sign-in" className="block py-2">
                               সাইন ইন
                           </Link>
                           <Link href="/sign-up"><Button className="w-full bg-[#05893E]">সাইন আপ</Button></Link></>

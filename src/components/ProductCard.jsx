@@ -27,7 +27,7 @@ export default function ProductCard({
         </div>
 
         <div className="min-w-0">
-          <h3 className="truncate text-sm font-bold leading-7 text-[#26352b]">
+          <h3 className="truncate text-sm md:text-lg font-bold leading-7 text-[#26352b]">
             {product.nameBn}
           </h3>
 
@@ -44,7 +44,7 @@ export default function ProductCard({
             আজকের দাম
           </p>
 
-          <p className="mt-0.5 text-xl font-extrabold leading-7 text-[#26352b]">
+          <p className="mt-0.5 text-lg font-extrabold leading-7 text-[#26352b]">
             {product.today.toLocaleString("bn-BD")} টাকা
           </p>
         </div>

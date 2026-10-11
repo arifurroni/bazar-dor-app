@@ -33,6 +33,10 @@ const SignIn = () => {
     return (
         <div className='flex justify-center mt-5'>
             <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
+                <div className='my-3'>
+                    <h1 className='font-bold'>Sign In</h1>
+                    <p>Input data for Sign In</p>
+                </div>
                 <TextField
                     isRequired
                     name="email"
