@@ -80,8 +80,10 @@ export default function Navbar({categories}) {
                       {/* Need to add Date */}
 
                   </div>
+                  
               </div>
               <ul className="hidden items-center gap-4 md:flex">
+                  <Link href="/">Home</Link>
                   {/* <li>
                       <Link href="#">Features</Link>
                   </li>
@@ -92,7 +94,7 @@ export default function Navbar({categories}) {
                   </li> */}
 
                     {
-                        categories?.map(cat => <li key={cat?.id}><span>{cat?.icon}</span><Link className="text-xs">{cat?.nameBn}</Link></li>)
+                        categories?.map(cat => <li key={cat?.id}><Link href={`/category/${cat?.slug}`} className="text-xs"><span>{cat?.icon}</span>{cat?.nameBn}</Link></li>)
                     }
 
                   {/* {
@@ -124,6 +126,7 @@ export default function Navbar({categories}) {
           {isMenuOpen && (
               <div className="border-t border-separator md:hidden">
                   <ul className="flex flex-col gap-2 p-4">
+                      <Link href="/">Home</Link>
                       {/* <li>
                           <Link href="#" className="block py-2">
                               Features
