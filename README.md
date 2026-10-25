@@ -109,7 +109,7 @@ The goal of BazarDor is to make everyday market price information more accessibl
 
 ## 👨‍💻 Developer
 
-## Md. Arifur Rahman
+### Md. Arifur Rahman
 
 Developed with ❤️ using Next.js, JavaScript, and modern web technologies.
 
